@@ -10,7 +10,6 @@ export default class Game extends React.Component {
         super(props);
         
         this.state = {
-            guessCount: 0,
             guessList: [],
             feedback: "Make your guess",
             randomNumber: Math.floor(Math.random()*100) + 1
@@ -19,7 +18,6 @@ export default class Game extends React.Component {
     
     resetGame() {
         this.setState({
-            guessCount: 0,
             guessList: [],
             feedback: "Make your guess",
             randomNumber: Math.floor(Math.random()*100) + 1
