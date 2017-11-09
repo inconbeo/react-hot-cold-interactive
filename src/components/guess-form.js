@@ -4,7 +4,14 @@ import './guess-form.css';
 
 export default function GuessForm(props) {
     return (
-        <form>
+        <form onSubmit={e => {
+            e.preventDefault();
+            props.handleGuess(e.target.userGuess.value)
+            props.addToGuessList(e.target.userGuess.value)
+            e.target.userGuess.value=''
+           }     
+            }
+            >
             <input type="text" name="userGuess" id="userGuess"
                 className="text" maxLength="3" autoComplete="off"
                 placeholder="Enter your Guess" required />
